@@ -8,6 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  base: '/InventoryManagment/',
+  base: '/InventoryManagment/docs/',
   outDir: '../../docs',
 });
