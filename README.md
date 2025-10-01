@@ -71,12 +71,16 @@ Permite administrar productos y proveedores, mostrando la información en una in
 
 - Asociación de productos con proveedores (JOIN SQL)
 
-- CRUD de Proveedores (en progreso)
+- CRUD de Proveedores
 
 ## 📖 Uso del programa
 
-Al iniciar, la aplicación carga automáticamente los productos desde la base de datos.
+Al iniciar, la aplicación muestra los dos servicios disponibles: gestión de productos y gestión de proveedores.
 
+
+### Productos
+
+Selecciona "Productos" para ver y administrar los productos en inventario.
 Los datos se muestran en un DataGridView con las columnas:
 
 - ID Producto
@@ -92,3 +96,26 @@ Los datos se muestran en un DataGridView con las columnas:
 - Precio Costo
 
 - Proveedor
+
+Puedes agregar, editar o eliminar productos mediante los formularios correspondientes.
+Los cambios se reflejan en la base de datos MySQL.
+
+### Proveedores
+
+Para gestionar proveedores, selecciona "Proveedores".
+Los datos se muestran en un DataGridView con las columnas:
+
+ - ID Proveedor
+
+ - Nombre
+
+ - Nombre Contacto
+
+ - Teléfono
+
+ - Email
+
+ - Dirección
+
+Puedes agregar, editar o eliminar productos y proveedores mediante los formularios correspondientes.
+Los cambios se reflejan en la base de datos MySQL.

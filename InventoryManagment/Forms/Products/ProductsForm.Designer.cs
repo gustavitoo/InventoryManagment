@@ -37,6 +37,8 @@
             this.dgvStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProviderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_editProduct = new System.Windows.Forms.Button();
+            this.btn_refreshProducts = new System.Windows.Forms.Button();
             this.btn_deleteProduct = new System.Windows.Forms.Button();
             this.btn_addProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -64,45 +66,54 @@
             this.dgvProductId.DataPropertyName = "ProductId";
             this.dgvProductId.HeaderText = "Id";
             this.dgvProductId.Name = "dgvProductId";
+            this.dgvProductId.ReadOnly = true;
             // 
             // dgvName
             // 
             this.dgvName.DataPropertyName = "Name";
             this.dgvName.HeaderText = "Nombre";
             this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
             // 
             // dgvCategory
             // 
             this.dgvCategory.DataPropertyName = "Category";
             this.dgvCategory.HeaderText = "Categoria";
             this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
             // 
             // dgvUnitPrice
             // 
             this.dgvUnitPrice.DataPropertyName = "UnitPrice";
             this.dgvUnitPrice.HeaderText = "Precio Unitario";
             this.dgvUnitPrice.Name = "dgvUnitPrice";
+            this.dgvUnitPrice.ReadOnly = true;
             // 
             // dgvCostPrice
             // 
             this.dgvCostPrice.DataPropertyName = "CostPrice";
             this.dgvCostPrice.HeaderText = "Precio de costo";
             this.dgvCostPrice.Name = "dgvCostPrice";
+            this.dgvCostPrice.ReadOnly = true;
             // 
             // dgvStock
             // 
             this.dgvStock.DataPropertyName = "Stock";
             this.dgvStock.HeaderText = "Disponibles";
             this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
             // 
             // dgvProviderId
             // 
             this.dgvProviderId.DataPropertyName = "ProviderName";
             this.dgvProviderId.HeaderText = "Proveedor";
             this.dgvProviderId.Name = "dgvProviderId";
+            this.dgvProviderId.ReadOnly = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_editProduct);
+            this.groupBox1.Controls.Add(this.btn_refreshProducts);
             this.groupBox1.Controls.Add(this.btn_deleteProduct);
             this.groupBox1.Controls.Add(this.btn_addProduct);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
@@ -110,16 +121,37 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 426);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Opciones";
+            this.groupBox1.Text = "Elige una de las opciones";
+            // 
+            // btn_editProduct
+            // 
+            this.btn_editProduct.Location = new System.Drawing.Point(7, 50);
+            this.btn_editProduct.Name = "btn_editProduct";
+            this.btn_editProduct.Size = new System.Drawing.Size(186, 23);
+            this.btn_editProduct.TabIndex = 3;
+            this.btn_editProduct.Text = "Editar";
+            this.btn_editProduct.UseVisualStyleBackColor = true;
+            this.btn_editProduct.Click += new System.EventHandler(this.btn_editProduct_Click);
+            // 
+            // btn_refreshProducts
+            // 
+            this.btn_refreshProducts.Location = new System.Drawing.Point(7, 79);
+            this.btn_refreshProducts.Name = "btn_refreshProducts";
+            this.btn_refreshProducts.Size = new System.Drawing.Size(187, 23);
+            this.btn_refreshProducts.TabIndex = 2;
+            this.btn_refreshProducts.Text = "Actualizar";
+            this.btn_refreshProducts.UseVisualStyleBackColor = true;
+            this.btn_refreshProducts.Click += new System.EventHandler(this.btn_refreshProducts_Click);
             // 
             // btn_deleteProduct
             // 
-            this.btn_deleteProduct.Location = new System.Drawing.Point(7, 50);
+            this.btn_deleteProduct.Location = new System.Drawing.Point(6, 108);
             this.btn_deleteProduct.Name = "btn_deleteProduct";
             this.btn_deleteProduct.Size = new System.Drawing.Size(187, 23);
             this.btn_deleteProduct.TabIndex = 1;
             this.btn_deleteProduct.Text = "Eliminar";
             this.btn_deleteProduct.UseVisualStyleBackColor = true;
+            this.btn_deleteProduct.Click += new System.EventHandler(this.btn_deleteProduct_Click);
             // 
             // btn_addProduct
             // 
@@ -129,6 +161,7 @@
             this.btn_addProduct.TabIndex = 0;
             this.btn_addProduct.Text = "Añadir";
             this.btn_addProduct.UseVisualStyleBackColor = true;
+            this.btn_addProduct.Click += new System.EventHandler(this.btn_addProduct_Click);
             // 
             // ProductsForm
             // 
@@ -159,5 +192,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCostPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvProviderId;
+        private System.Windows.Forms.Button btn_refreshProducts;
+        private System.Windows.Forms.Button btn_editProduct;
     }
 }

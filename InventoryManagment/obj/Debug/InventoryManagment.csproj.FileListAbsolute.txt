@@ -2,7 +2,6 @@ C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\Inve
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\InventoryManagment.exe
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\InventoryManagment.pdb
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.csproj.AssemblyReference.cache
-C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Form1.resources
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Properties.Resources.resources
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.csproj.GenerateResource.cache
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.csproj.CoreCompileInputs.cache
@@ -10,7 +9,6 @@ C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\Inve
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.pdb
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.exe.config
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.ProductsForm.resources
-C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.ProvidersForm.resources
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\BouncyCastle.Cryptography.dll
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\Google.Protobuf.dll
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\K4os.Compression.LZ4.dll
@@ -44,3 +42,7 @@ C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\Syst
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\Inventor.61E6DB23.Up2Date
+C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Main.resources
+C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Forms.Products.NewProduct.resources
+C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Forms.Providers.ProvidersForm.resources
+C:\Users\washo\source\repos\InventoryManagment\InventoryManagment\obj\Debug\InventoryManagment.Forms.Providers.NewProvider.resources

@@ -38,7 +38,7 @@ namespace InventoryManagment.DAO
             return lista;
         }
 
-        public static void Insert(Product prod)
+        public static void Add(Product prod)
         {
             using (var con = Connection.GetConnection())
             {
@@ -52,6 +52,25 @@ namespace InventoryManagment.DAO
                 cmd.Parameters.AddWithValue("@costPrice", prod.CostPrice);
                 cmd.Parameters.AddWithValue("@stock", prod.Stock);
                 cmd.Parameters.AddWithValue("@prov", prod.ProviderId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void Update(Product prod)
+        {
+            using (var con = Connection.GetConnection())
+            {
+                con.Open();
+                string sql = "UPDATE products SET Name=@name, Category=@category, UnitPrice=@unitPrice, " +
+                             "CostPrice=@costPrice, Stock=@stock, ProviderId=@prov WHERE ProductId=@id";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@name", prod.Name);
+                cmd.Parameters.AddWithValue("@category", prod.Category);
+                cmd.Parameters.AddWithValue("@unitPrice", prod.UnitPrice);
+                cmd.Parameters.AddWithValue("@costPrice", prod.CostPrice);
+                cmd.Parameters.AddWithValue("@stock", prod.Stock);
+                cmd.Parameters.AddWithValue("@prov", prod.ProviderId);
+                cmd.Parameters.AddWithValue("@id", prod.ProductId);
                 cmd.ExecuteNonQuery();
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryManagment.Models
 {
-    internal class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
@@ -15,6 +15,6 @@ namespace InventoryManagment.Models
         public decimal CostPrice { get; set; }
         public int Stock { get; set; }
         public int ProviderId { get; set; }
-        public string ProviderName { get; set; } = string.Empty;
+        public string ProviderName { get; set; }
     }
 }
