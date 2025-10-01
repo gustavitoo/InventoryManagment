@@ -1,0 +1,48 @@
+---
+import { Package, Download } from "lucide-astro";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-lg"
+>
+  <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-2">
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary"
+      >
+        <Package class="h-6 w-6 text-primary-foreground" />
+      </div>
+      <span class="text-xl font-semibold">InventoryPro</span>
+    </div>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      <a
+        href="#features"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Características
+      </a>
+      <a
+        href="#showcase"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Capturas
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <button
+        class="cursor-pointer inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      >
+        <a href="https://github.com/gustavitoo/InventoryManagment"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2"
+        >
+          <Download class="h-4 w-4" />
+          Descargar Instalador
+        </a>
+      </button>
+    </div>
+  </div>
+</header>

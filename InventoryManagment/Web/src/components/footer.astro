@@ -1,0 +1,96 @@
+---
+import { Package, Github, Twitter, Linkedin } from "lucide-astro";
+---
+
+<footer class="border-t border-border bg-card/50">
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid gap-8 md:grid-cols-4">
+      <div class="md:col-span-1">
+        <div class="mb-4 flex items-center gap-2">
+          <div
+            class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary"
+          >
+            <Package class="h-5 w-5 text-primary-foreground" />
+          </div>
+          <span class="text-lg font-semibold">InventoryPro</span>
+        </div>
+        <p class="text-pretty text-sm text-muted-foreground">
+          La solución completa para gestionar tu inventario de productos y
+          proveedores.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Producto</h3>
+        <ul class="space-y-2 text-sm text-muted-foreground">
+          <li>
+            <a href="#" class="hover:text-foreground"> Características </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Precios </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Casos de Uso </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Actualizaciones </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Empresa</h3>
+        <ul class="space-y-2 text-sm text-muted-foreground">
+          <li>
+            <a href="#" class="hover:text-foreground"> Sobre Nosotros </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Blog </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Carreras </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Contacto </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Legal</h3>
+        <ul class="space-y-2 text-sm text-muted-foreground">
+          <li>
+            <a href="#" class="hover:text-foreground"> Privacidad </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Términos </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Seguridad </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-foreground"> Cookies </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row"
+    >
+      <p class="text-sm text-muted-foreground">
+        © 2025 InventoryPro. Todos los derechos reservados.
+      </p>
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/gustavitoo/InventoryManagment"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <Github class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

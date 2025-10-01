@@ -1,0 +1,74 @@
+---
+import { Package, Users, BarChart3, Shield, Zap, Database } from "lucide-astro";
+
+const features = [
+  {
+    icon: Package,
+    title: "Gestión de Productos",
+    description:
+      "Administra tu catálogo completo con información detallada de cada producto, precios, stock y categorías.",
+  },
+  {
+    icon: Users,
+    title: "Control de Proveedores",
+    description:
+      "Mantén un registro completo de tus proveedores con datos de contacto y relaciones con productos.",
+  },
+  {
+    icon: BarChart3,
+    title: "Reportes en Tiempo Real",
+    description:
+      "Visualiza el estado de tu inventario con reportes actualizados y métricas clave de tu negocio.",
+  },
+  {
+    icon: Zap,
+    title: "Operaciones Rápidas",
+    description:
+      "Añade, edita, actualiza y elimina registros con una interfaz intuitiva y eficiente.",
+  },
+  {
+    icon: Database,
+    title: "Base de Datos Robusta",
+    description:
+      "Almacena toda tu información de forma segura con respaldos automáticos y alta disponibilidad.",
+  },
+  {
+    icon: Shield,
+    title: "Seguridad Garantizada",
+    description:
+      "Protege tus datos con encriptación de nivel empresarial y controles de acceso avanzados.",
+  },
+];
+---
+
+<section id="features" class="relative py-24">
+  <div class="container mx-auto px-6">
+    <div class="mb-16 text-center">
+      <h2
+        class="mb-4 text-balance text-4xl font-bold tracking-tight md:text-5xl"
+      >
+        Todo lo que necesitas para gestionar tu inventario
+      </h2>
+      <p class="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground">
+        Herramientas poderosas diseñadas para simplificar la gestión de tu
+        inventario y optimizar tus operaciones diarias.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => (
+        <div
+          class="group relative overflow-hidden rounded-xl border border-border bg-card p-8 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+        >
+          <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+            <feature.icon class="h-6 w-6" />
+          </div>
+          <h3 class="mb-2 text-xl font-semibold">{feature.title}</h3>
+          <p class="text-pretty text-muted-foreground">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
