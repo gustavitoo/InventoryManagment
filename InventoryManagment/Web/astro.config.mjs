@@ -8,6 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  base: '/InventoryManagment/docs/',
-  outDir: '../../docs',
+  // Github pages for 'gustavitoo'
+  site: 'https://gustavitoo.github.io/InventoryManagment/',
 });
