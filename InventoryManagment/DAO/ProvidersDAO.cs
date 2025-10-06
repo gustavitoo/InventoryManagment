@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using InventoryManagment.Models;
+﻿using InventoryManagment.Models;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace InventoryManagment.DAO
 {
@@ -8,71 +8,94 @@ namespace InventoryManagment.DAO
     {
         public static List<Provider> GetAll()
         {
-            var lista = new List<Provider>();
-            using (var con = Connection.GetConnection())
+            using (var con = InventoryManagment.Data.Connection.GetConnection())
             {
-                con.Open();
-                string sql = "SELECT ProviderId, Name, ContactName, Phone, Email, Address FROM providers";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
+                try
                 {
-                    lista.Add(new Provider
+                    con.Open();
+                    string sql = "SELECT ProviderId, Name, ContactName, Phone, Email, Address FROM Providers";
+
+                    var list = new List<Provider>();
+
+                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        ProviderId = reader.GetInt32("ProviderId"),
-                        Name = reader.GetString("Name"),
-                        ContactName = reader.GetString("ContactName"),
-                        Phone = reader.GetString("Phone"),
-                        Email = reader.GetString("Email"),
-                        Address = reader.GetString("Address")
-                    });
+                        while (reader.Read())
+                        {
+                            list.Add(new Provider
+                            {
+                                ProviderId = reader.GetInt32(reader.GetOrdinal("ProviderId")),
+                                Name = reader.GetString(reader.GetOrdinal("Name")),
+                                ContactName = reader.GetString(reader.GetOrdinal("ContactName")),
+                                Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                Email = reader.GetString(reader.GetOrdinal("Email")),
+                                Address = reader.GetString(reader.GetOrdinal("Address"))
+                            });
+                        }
+                    }
+
+                    return list;
+                } catch (SqlException)
+                {
+                    return new List<Provider>();
                 }
             }
-            return lista;
         }
 
         public static void Add(Provider provider)
         {
-            using (var con = Connection.GetConnection())
+            using (var con = InventoryManagment.Data.Connection.GetConnection())
             {
                 con.Open();
-                string sql = "INSERT INTO providers (Name, ContactName, Phone, Email, Address) VALUES (@Name, @ContactName, @Phone, @Email, @Address)";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@Name", provider.Name);
-                cmd.Parameters.AddWithValue("@ContactName", provider.ContactName);
-                cmd.Parameters.AddWithValue("@Phone", provider.Phone);
-                cmd.Parameters.AddWithValue("@Email", provider.Email);
-                cmd.Parameters.AddWithValue("@Address", provider.Address);
-                cmd.ExecuteNonQuery();
+                string sql = @"INSERT INTO Providers (Name, ContactName, Phone, Email, Address)
+                               VALUES (@Name, @ContactName, @Phone, @Email, @Address)";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@Name", provider.Name);
+                    cmd.Parameters.AddWithValue("@ContactName", provider.ContactName);
+                    cmd.Parameters.AddWithValue("@Phone", provider.Phone);
+                    cmd.Parameters.AddWithValue("@Email", provider.Email);
+                    cmd.Parameters.AddWithValue("@Address", provider.Address);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
         public static void Update(Provider provider)
         {
-            using (var con = Connection.GetConnection())
+            using (var con = InventoryManagment.Data.Connection.GetConnection())
             {
                 con.Open();
-                string sql = "UPDATE providers SET Name=@Name, ContactName=@ContactName, Phone=@Phone, Email=@Email, Address=@Address WHERE ProviderId=@ProviderId";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@Name", provider.Name);
-                cmd.Parameters.AddWithValue("@ContactName", provider.ContactName);
-                cmd.Parameters.AddWithValue("@Phone", provider.Phone);
-                cmd.Parameters.AddWithValue("@Email", provider.Email);
-                cmd.Parameters.AddWithValue("@Address", provider.Address);
-                cmd.Parameters.AddWithValue("@ProviderId", provider.ProviderId);
-                cmd.ExecuteNonQuery();
+                string sql = @"UPDATE Providers
+                               SET Name=@Name, ContactName=@ContactName, Phone=@Phone, Email=@Email, Address=@Address
+                               WHERE ProviderId=@ProviderId";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@Name", provider.Name);
+                    cmd.Parameters.AddWithValue("@ContactName", provider.ContactName);
+                    cmd.Parameters.AddWithValue("@Phone", provider.Phone);
+                    cmd.Parameters.AddWithValue("@Email", provider.Email);
+                    cmd.Parameters.AddWithValue("@Address", provider.Address);
+                    cmd.Parameters.AddWithValue("@ProviderId", provider.ProviderId);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
         public static void Delete(int providerId)
         {
-            using (var con = Connection.GetConnection())
+            using (var con = InventoryManagment.Data.Connection.GetConnection())
             {
                 con.Open();
-                string sql = "DELETE FROM providers WHERE ProviderId=@ProviderId";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@ProviderId", providerId);
-                cmd.ExecuteNonQuery();
+                string sql = "DELETE FROM Providers WHERE ProviderId=@ProviderId";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@ProviderId", providerId);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }

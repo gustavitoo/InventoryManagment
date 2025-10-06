@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 
-namespace InventoryManagment.DAO
+namespace InventoryManagment.Data
 {
-    internal class Connection
+    public class Connection
     {
-        private static string connection = "Server=localhost;Database=inventory_managment;Uid=root;Pwd=;";
-        public static MySqlConnection GetConnection()
+        private static string connectionString = "Data Source=.;Initial Catalog=InventoryDB;Integrated Security=True";
+        // Data Source=.;Initial Catalog=InventoryDB;User ID=;Password=.
+
+        public static SqlConnection GetConnection()
         {
-            return new MySqlConnection(connection);
+            return new SqlConnection(connectionString);
         }
     }
 }

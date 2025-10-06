@@ -56,10 +56,19 @@ namespace InventoryManagment.Forms.Products
 
         private void LoadProviders()
         {
-            var providers = ProvidersService.GetAll();
-            cmbProviders.DataSource = providers;
-            cmbProviders.DisplayMember = "Name";     
-            cmbProviders.ValueMember = "ProviderId";
+            try 
+            {
+                var providers = ProvidersService.GetAll();
+                cmbProviders.DataSource = providers;
+                cmbProviders.DisplayMember = "Name";
+                cmbProviders.ValueMember = "ProviderId";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los proveedores: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
         }
 
 
@@ -80,34 +89,41 @@ namespace InventoryManagment.Forms.Products
                 return;
             }
 
-            if (_isEditMode)
+            try
             {
-                var result = MessageBox.Show("¿Estás seguro de guardar los cambios?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.No)
-                    return;
-
-                _product.Name = txtName.Text;
-                _product.Category = txtCategory.Text;
-                _product.Stock = int.Parse(txtStock.Text);
-                _product.UnitPrice = decimal.Parse(txtUnitPrice.Text);
-                _product.CostPrice = decimal.Parse(txtCostPrice.Text);
-                _product.ProviderId = (int)cmbProviders.SelectedValue;
-                Services.ProductsService.Update(_product);
-            }
-            else
-            {
-                var newProduct = new Product
+                if (_isEditMode)
                 {
-                    Name = txtName.Text,
-                    Category = txtCategory.Text,
-                    Stock = int.Parse(txtStock.Text),
-                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
-                    CostPrice = decimal.Parse(txtCostPrice.Text),
-                    ProviderId = (int)cmbProviders.SelectedValue
-                };
+                    var result = MessageBox.Show("¿Estás seguro de guardar los cambios?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                        return;
 
-                Services.ProductsService.Add(newProduct);
-                MessageBox.Show("Producto agregado con éxito", "Éxito");
+                    _product.Name = txtName.Text;
+                    _product.Category = txtCategory.Text;
+                    _product.Stock = int.Parse(txtStock.Text);
+                    _product.UnitPrice = decimal.Parse(txtUnitPrice.Text);
+                    _product.CostPrice = decimal.Parse(txtCostPrice.Text);
+                    _product.ProviderId = (int)cmbProviders.SelectedValue;
+                    Services.ProductsService.Update(_product);
+                }
+                else
+                {
+                    var newProduct = new Product
+                    {
+                        Name = txtName.Text,
+                        Category = txtCategory.Text,
+                        Stock = int.Parse(txtStock.Text),
+                        UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                        CostPrice = decimal.Parse(txtCostPrice.Text),
+                        ProviderId = (int)cmbProviders.SelectedValue
+                    };
+
+                    Services.ProductsService.Add(newProduct);
+                    MessageBox.Show("Producto agregado con éxito", "Éxito");
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar el producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             this.DialogResult = DialogResult.OK;
