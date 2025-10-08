@@ -35,7 +35,6 @@ A continuación, un resumen de los principales apartados incluidos en el documen
   - Diseño de base de datos  
   - Codificación  
 - Conclusión  
-- Anexos  
 
 > ⚠️ Nota: Para mayor comodidad de lectura y edición, te recomiendo abrir el documento en modo “Presentación” o usar el menú de Google Docs para navegación por secciones.
 
