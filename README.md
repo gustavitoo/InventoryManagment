@@ -3,6 +3,42 @@
 Este proyecto es un **sistema de gestión de inventario** desarrollado en **C# Windows Forms** con conexión a **MySQL**.  
 Permite administrar productos y proveedores, mostrando la información en una interfaz amigable con `DataGridView`.
 
+## 📄 Documentación Completa
+
+Para ver la documentación completa y detallada del proyecto, puedes revisar el siguiente documento:
+
+[Documentación InventoryPro (Google Docs)](https://docs.google.com/document/d/1JHYUFmD0NpDkxVGrK2o1b5L_96Pf8lPfIkCzuH09YVI/edit?usp=sharing)
+
+A continuación, un resumen de los principales apartados incluidos en el documento:
+
+### 🗂️ Contenidos destacados
+
+- Introducción  
+- Problematización  
+  - Antecedentes  
+  - Definición del proyecto  
+  - Objetivos generales y específicos  
+  - Metodología  
+- Marco Teórico  
+  - Antecedentes  
+  - Software a medida  
+  - Arquitectura de software  
+  - Ingeniería de software  
+  - Base de datos  
+  - UML  
+  - Lenguajes de programación  
+- Desarrollo  
+  - Metodología de desarrollo  
+  - Requisitos funcionales y no funcionales  
+  - Casos de uso  
+  - Diseño de interfaz  
+  - Diseño de base de datos  
+  - Codificación  
+- Conclusión  
+- Anexos  
+
+> ⚠️ Nota: Para mayor comodidad de lectura y edición, te recomiendo abrir el documento en modo “Presentación” o usar el menú de Google Docs para navegación por secciones.
+
 ---
 
 ## 🚀 Tecnologías utilizadas
